@@ -3,5 +3,97 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "app-admin": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/app-admin",
+      "sourceRoot": "projects/app-admin/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "baseHref": "/app-admin/",
+            "outputPath": {
+              "base" : "../CapitalystServer/src/main/web/angular/app-admin",
+              "browser": ""
+            },
+            "index": "projects/app-admin/src/index.html",
+            "browser": "projects/app-admin/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/app-admin/tsconfig.app.json",
+            "assets": [
+              "projects/app-admin/src/favicon.ico",
+              "projects/app-admin/src/assets"
+            ],
+            "styles": [
+              "projects/app-admin/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "app-admin:build:production"
+            },
+            "development": {
+              "buildTarget": "app-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "app-admin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/app-admin/tsconfig.spec.json",
+            "assets": [
+              "projects/app-admin/src/favicon.ico",
+              "projects/app-admin/src/assets"
+            ],
+            "styles": [
+              "projects/app-admin/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
   }
 }
