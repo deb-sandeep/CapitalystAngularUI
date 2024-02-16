@@ -21,15 +21,21 @@ body {
   background-color: #333333;
 }
 
-/* Override some styles of BS .navbar class. */
-.navbar {
-  font-size:23px;
-  color:#A9A9A9;
-  margin: 0;
-  padding-left: 15px;
-  --bs-navbar-padding-y: 4px;
+/* The base split pane of an app page. */
+.base-split-pane {
+  width: 100%;
+  height: calc(100vh - 35px );
+  display: flex;
+  overflow-y: hidden;
 }
 
-.navbar > a {
-  text-decoration: none;  /* No underline for links inside navbar */
+.base-module-panel {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left:20px;
+  overflow-y: auto;
+  font-size: 12px;
 }

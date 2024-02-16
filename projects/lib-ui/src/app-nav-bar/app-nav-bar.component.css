@@ -1,0 +1,12 @@
+/* Override some styles of BS .navbar class. */
+.navbar {
+  font-size:23px;
+  color:#A9A9A9;
+  margin: 0;
+  padding-left: 15px;
+  --bs-navbar-padding-y: 4px;
+}
+
+.navbar > a {
+  text-decoration: none;  /* No underline for links inside navbar */
+}

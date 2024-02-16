@@ -11,6 +11,9 @@
     "paths": {
       "lib-assets": [
         "./dist/lib-assets"
+      ],
+      "lib-ui": [
+        "./dist/lib-ui"
       ]
     },
     "noFallthroughCasesInSwitch": true,

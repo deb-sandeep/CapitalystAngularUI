@@ -1,0 +1,26 @@
+.base-icon-bar {
+  position:relative;
+  width: 65px;
+  height: 100%;
+  border-style:hidden;
+  border-color:#f4f4f4;
+  background-color: #555;
+  overflow-y: auto;
+}
+
+.base-icon-bar a {
+  display: block; /* Make the links appear below each other instead of side-by-side */
+  text-align: center; /* Center-align text */
+  padding: 10px; /* Add some padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  font-size: 2rem; /* Increased font-size */
+  color: wheat;
+}
+
+.base-icon-bar a:hover {
+  background-color: #000; /* Add a hover color */
+}
+
+.base-icon-bar .active {
+  background-color: #04AA6D; /* Add an active/current color */
+}
