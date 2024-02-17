@@ -5,14 +5,12 @@ import {RouterLink} from "@angular/router";
 export class IconBarMeta {
   bsIconName : string ;
   routePath : string ;
+  selected : boolean ;
 
-  /**
-   * @param iconName Name of the bootstrap icon. Without the bs- prefix.
-   * @param routePath The path of the route.
-   */
-  constructor( iconName:string, routePath:string ) {
+  constructor( iconName:string, routePath:string, selected:boolean = false ) {
     this.bsIconName = iconName ;
     this.routePath = routePath ;
+    this.selected = selected ;
   }
 }
 
@@ -26,5 +24,10 @@ export class IconBarMeta {
 export class AppIconBarComponent {
 
   @Input( "meta" )
-  iconMetaList:IconBarMeta[] = [];
+  public iconMetaList:IconBarMeta[] = [];
+
+  featureIconClicked( meta : IconBarMeta ): void {
+    this.iconMetaList.forEach( meta => meta.selected = false )
+    meta.selected = true ;
+  }
 }
