@@ -14,8 +14,7 @@ import { JobRunFeatureComponent } from "../job-run-feature/job-run-feature.compo
     AppNavBarComponent,
     JobRunFeatureComponent,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 

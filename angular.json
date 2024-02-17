@@ -25,7 +25,6 @@
             ],
             "tsConfig": "projects/app-admin/tsconfig.app.json",
             "assets": [
-              "projects/app-admin/src/assets",
               {
                 "glob": "**/*",
                 "input": "projects/lib-assets/assets",
