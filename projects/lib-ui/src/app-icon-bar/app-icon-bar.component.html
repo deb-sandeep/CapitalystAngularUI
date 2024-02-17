@@ -1,4 +1,5 @@
 <div class="base-icon-bar">
   <a *ngFor="let meta of iconMetaList"
-     class="bi-{{meta.bsIconName}}"></a>
+     class="bi-{{meta.bsIconName}}"
+     routerLink="{{meta.routePath}}"></a>
 </div>

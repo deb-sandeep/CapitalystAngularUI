@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {CommonModule} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 export class IconBarMeta {
   bsIconName : string ;
@@ -18,7 +19,7 @@ export class IconBarMeta {
 @Component({
   selector: 'app-icon-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './app-icon-bar.component.html',
   styleUrl: './app-icon-bar.component.css'
 })
