@@ -21,7 +21,7 @@ import { TestFeatureComponent } from "../test-feature/test-feature.component";
 })
 export class AppComponent {
 
-  navBarTitle : string = 'Test title' ;
+  navBarTitle : string = 'Capitalyst new admin module' ;
   iconMetaList : IconBarMeta[] = [
     new IconBarMeta( 'clipboard-pulse',  'job-run' ),
     new IconBarMeta( 'question-diamond', 'test' ),

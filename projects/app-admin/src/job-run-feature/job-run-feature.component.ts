@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppComponent} from "../app/app.component";
 
 @Component({
   selector: 'job-run-feature',
@@ -9,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class JobRunFeatureComponent {
 
+  constructor( private _parent : AppComponent ) {
+    _parent.navBarTitle = 'Job Run status management' ;
+  }
 }
