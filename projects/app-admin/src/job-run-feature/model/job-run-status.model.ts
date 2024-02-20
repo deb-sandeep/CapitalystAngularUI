@@ -13,7 +13,7 @@ export class JobRunStatusModel {
               .subscribe( entries => this.entries = entries ) ;
    }
 
-  public getStatusEntries() : JobRunStatus[] {
+  public getEntries() : JobRunStatus[] {
     return this.entries ;
   }
 }
