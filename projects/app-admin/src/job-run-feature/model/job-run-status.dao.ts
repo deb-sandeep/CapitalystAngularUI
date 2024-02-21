@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { JobRunStatus, SearchCriteria } from "./job-run-status.vo";
 import { Observable } from "rxjs";
 import { Pageable, SortInfo, SpringPageVo } from "lib-ui";
+import { environment } from "../../environments/environment";
 
 @Injectable()
 export class JobRunStatusDao {
@@ -10,7 +11,7 @@ export class JobRunStatusDao {
   constructor( private http:HttpClient ) {}
 
   public getSearchResults( searchCriteria:SearchCriteria ): Observable<SpringPageVo<JobRunStatus>> {
-    return this.http.get<SpringPageVo<JobRunStatus>>( "http://localhost:8080/Job/SearchRunStatusEntries", {
+    return this.http.get<SpringPageVo<JobRunStatus>>( `${environment.apiRoot}/Job/SearchRunStatusEntries`, {
       observe : 'body',
       responseType : 'json'
     }) ;
