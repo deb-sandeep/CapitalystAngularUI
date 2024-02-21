@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { DatePipe, NgForOf, NgIf } from "@angular/common";
 
-import { AppComponent } from "../app/app.component";
 import { ModelModule } from "./model/model.module";
 import { JobRunStatusModel } from "./model/job-run-status.model";
 import { PipesModule } from "./pipes/pipes.module";
 import { ComponentsModule } from "./components/components.module";
+import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'job-run-feature',
@@ -19,8 +19,9 @@ import { ComponentsModule } from "./components/components.module";
 })
 export class JobRunFeatureComponent {
 
-  constructor( private parent : AppComponent,
+  constructor( private _app : AppComponent,
                public model : JobRunStatusModel ) {
-    parent.navBarTitle = 'Job Run status management' ;
+
+    _app.navBarTitle = 'Job Run Status Management' ;
   }
 }

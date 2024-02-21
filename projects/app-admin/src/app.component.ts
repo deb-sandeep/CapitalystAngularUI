@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { IconBarMeta } from "lib-ui";
 import { AppIconBarComponent } from "lib-ui";
 import { AppNavBarComponent } from "lib-ui";
-import { JobRunFeatureComponent } from "../job-run-feature/job-run-feature.component";
+import { JobRunFeatureComponent } from "./job-run-feature/job-run-feature.component";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,8 @@ import { JobRunFeatureComponent } from "../job-run-feature/job-run-feature.compo
 })
 export class AppComponent {
 
-  navBarTitle : string = 'Capitalyst new admin module' ;
+  navBarTitle : string = 'New Admin module' ;
+
   iconMetaList : IconBarMeta[] = [
     new IconBarMeta( 'clipboard-pulse',  'job-run', true )
   ] ;
