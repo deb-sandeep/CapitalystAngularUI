@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core" ;
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { JobRunStatus, SearchCriteria } from "./job-run-status.vo";
 import { Observable } from "rxjs";
 import { Pageable, SortInfo, SpringPageVo } from "lib-ui";
@@ -11,9 +11,26 @@ export class JobRunStatusDao {
   constructor( private http:HttpClient ) {}
 
   public getSearchResults( searchCriteria:SearchCriteria ): Observable<SpringPageVo<JobRunStatus>> {
+
+    let params = new HttpParams() ;
+    type SearchCriteriaKey = keyof SearchCriteria ;
+
+    for( const property in searchCriteria ) {
+      const propKey: SearchCriteriaKey = property as keyof SearchCriteria ;
+      let propValue = searchCriteria[propKey] ;
+
+      if( propValue != null ) {
+        if( propValue instanceof Date ) {
+          propValue = (propValue as Date).toISOString().split('T')[0] ;
+        }
+        params = params.append( property, propValue.toString() ) ;
+      }
+    }
+
     return this.http.get<SpringPageVo<JobRunStatus>>( `${environment.apiRoot}/Job/SearchRunStatusEntries`, {
       observe : 'body',
-      responseType : 'json'
+      responseType : 'json',
+      params: params
     }) ;
   }
 

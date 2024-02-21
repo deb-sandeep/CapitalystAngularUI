@@ -1,19 +1,20 @@
 export class SearchCriteria {
-  constructor( public jobName?:string,
-               public result?:string,
-               public fromDate?:Date,
-               public toDate?:Date,
-               public pageNum?:number,
-               public pageSize?:number){}
+  constructor(
+    public jobName:string|null=null,
+    public result:string|null=null,
+    public fromDate:Date|null=null,
+    public toDate:Date|null=null,
+    public pageNum:number=1,
+    public pageSize:number=50
+  ) {}
 }
 
-export class JobRunStatus {
-  constructor( public id:number,
-               public date:Date,
-               public duration:number,
-               public result:string,
-               public remarks:string|null,
-               public jobName:string,
-               public selected:boolean = false) {
-  }
+export interface JobRunStatus {
+  id:number,
+  date:Date,
+  duration:number,
+  result:string,
+  remarks:string|null,
+  jobName:string,
+  selected:boolean
 }
