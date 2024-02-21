@@ -8,11 +8,13 @@ export class SearchCriteria {
 }
 
 export class JobRunStatus {
+
   constructor( public id:number,
                public date:Date,
                public duration:number,
                public result:string,
                public remarks:string|null,
-               public jobName:string ) {
+               public jobName:string,
+               public selected:boolean = false) {
   }
 }

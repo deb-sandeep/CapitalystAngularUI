@@ -2,15 +2,27 @@
   <table class="table table-bordered table-hover">
     <thead>
     <tr>
+      <th scope="col" style="width: 30px;">
+        <input type="checkbox"
+               #bulkSelectionCheckbox
+               [checked]="getPctEntriesSelected() === 1"
+               [indeterminate]="getPctEntriesSelected() > 0 && getPctEntriesSelected() < 1"
+               (change)="bulkSelectionChanged(bulkSelectionCheckbox.checked)"/>
+      </th>
       <th scope="col" style="width: 150px;">Time</th>
       <th scope="col" style="width: 200px;">Job</th>
       <th scope="col" style="width: 50px;">Result</th>
       <th scope="col" style="width: 50px;">Dur (s)</th>
       <th scope="col">Remarks</th>
+      <th scope="col" style="width: 20px;"></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let entry of model.getEntries()">
+      <td>
+        <input type="checkbox"
+               [(ngModel)]="entry.selected"/>
+      </td>
       <td class="font-monospace">{{entry.date | date:'dd-MMM-yy hh:mm'}}</td>
       <td>{{entry.jobName}}</td>
       <td class="text-center">
@@ -25,6 +37,10 @@
       <td class="text-end">{{entry.duration}}</td>
       <td>
         <code style="margin-bottom:0;">{{entry.remarks | firstLine}}</code>
+      </td>
+      <td class="text-end">
+        <span class="bi-trash font-red"
+              (click)="deleteEntry(entry)"></span>
       </td>
     </tr>
     </tbody>

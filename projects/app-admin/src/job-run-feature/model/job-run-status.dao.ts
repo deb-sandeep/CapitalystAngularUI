@@ -17,7 +17,8 @@ export class JobRunStatusDao {
           "duration": 0,
           "result": "SUCCESS",
           "remarks": null,
-          "jobName": "NSEIndexEODImportJob"
+          "jobName": "NSEIndexEODImportJob",
+          "selected" : false
         },
         {
           "id": 14787,
@@ -25,7 +26,8 @@ export class JobRunStatusDao {
           "duration": 0,
           "result": "FAILURE",
           "remarks": "java.lang.Exception\njava.io.Exception\njava.nio.Exception",
-          "jobName": "NSEIndexEODImportJob"
+          "jobName": "NSEIndexEODImportJob",
+          "selected" : false
         }
       ]);
       subscriber.complete() ;
