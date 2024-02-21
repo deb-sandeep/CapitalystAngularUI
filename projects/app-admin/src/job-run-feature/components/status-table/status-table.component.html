@@ -36,7 +36,7 @@
       </td>
       <td class="text-end">{{entry.duration}}</td>
       <td>
-        <code style="margin-bottom:0;">{{entry.remarks | firstLine}}</code>
+        <code style="margin-bottom:0;">{{entry.remarks | firstLine | slice:0:100}}</code>
       </td>
       <td class="text-end">
         <span class="bi-trash font-red"

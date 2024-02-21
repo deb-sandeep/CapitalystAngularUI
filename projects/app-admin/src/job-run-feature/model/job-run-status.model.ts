@@ -1,19 +1,22 @@
 import { JobRunStatus } from "./job-run-status.vo" ;
 import { JobRunStatusDao } from "./job-run-status.dao";
 import { Injectable } from "@angular/core";
+import {SpringPageVo} from "lib-ui";
 
 @Injectable()
 export class JobRunStatusModel {
 
-  private entries:JobRunStatus[] ;
+  private pagedEntries: SpringPageVo<JobRunStatus> | null = null ;
 
   public constructor( dataSource:JobRunStatusDao ) {
-    this.entries = new Array<JobRunStatus>() ;
+
     dataSource.getSearchResults({})
-              .subscribe( entries => this.entries = entries ) ;
+              .subscribe( pagedEntries => {
+                this.pagedEntries = pagedEntries ;
+              } ) ;
    }
 
   public getEntries() : JobRunStatus[] {
-    return this.entries ;
+    return this.pagedEntries != null ? this.pagedEntries.content : [] ;
   }
 }

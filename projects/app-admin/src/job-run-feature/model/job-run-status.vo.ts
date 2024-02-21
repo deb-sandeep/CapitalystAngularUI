@@ -8,7 +8,6 @@ export class SearchCriteria {
 }
 
 export class JobRunStatus {
-
   constructor( public id:number,
                public date:Date,
                public duration:number,
