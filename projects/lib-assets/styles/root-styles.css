@@ -24,7 +24,7 @@ body {
 /* The base split pane of an app page. */
 .base-split-pane {
   width: 100%;
-  height: calc(100vh - 35px );
+  height: calc( 100vh - 35px ) ;
   display: flex;
   overflow-y: hidden;
 }
