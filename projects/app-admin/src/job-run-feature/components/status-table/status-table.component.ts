@@ -29,19 +29,6 @@ export class StatusTableComponent {
     console.log( "Entry to be deleted.", entry ) ;
   }
 
-  getPctEntriesSelected() : number {
-    const entries:JobRunStatus[] = this.model.getEntries() ;
-    const totalEntries:number = entries.length ;
-    let numEntriesSelected:number = 0 ;
-
-    for( const entry of entries ) {
-      if( entry.selected ) {
-        numEntriesSelected += 1 ;
-      }
-    }
-    return numEntriesSelected/totalEntries ;
-  }
-
   bulkSelectionChanged( newState:boolean ) : void {
     this.model.getEntries()
               .forEach( entry => entry.selected = newState ) ;

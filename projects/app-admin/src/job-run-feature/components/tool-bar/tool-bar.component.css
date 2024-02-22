@@ -12,3 +12,15 @@
 .spacer {
   width: 10px;
 }
+
+.spacer-2 {
+  width: 20px;
+}
+
+.spacer-5 {
+  width: 50px;
+}
+
+.spacer-10 {
+  width: 100px;
+}

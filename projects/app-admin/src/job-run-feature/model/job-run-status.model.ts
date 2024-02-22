@@ -60,4 +60,17 @@ export class JobRunStatusModel {
   getTotalRecords() : number {
     return this.pagedEntries != null ? this.pagedEntries.totalElements : 0 ;
   }
+
+  getPctEntriesSelected() : number {
+    const entries:JobRunStatus[] = this.getEntries() ;
+    const totalEntries:number = entries.length ;
+    let numEntriesSelected:number = 0 ;
+
+    for( const entry of entries ) {
+      if( entry.selected ) {
+        numEntriesSelected += 1 ;
+      }
+    }
+    return numEntriesSelected/totalEntries ;
+  }
 }

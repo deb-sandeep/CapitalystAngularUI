@@ -5,8 +5,8 @@
       <th scope="col" style="width: 30px;">
         <input type="checkbox"
                #bulkSelectionCheckbox
-               [checked]="getPctEntriesSelected() === 1"
-               [indeterminate]="getPctEntriesSelected() > 0 && getPctEntriesSelected() < 1"
+               [checked]="model.getPctEntriesSelected() === 1"
+               [indeterminate]="model.getPctEntriesSelected() > 0 && model.getPctEntriesSelected() < 1"
                (change)="bulkSelectionChanged(bulkSelectionCheckbox.checked)"/>
       </th>
       <th scope="col" style="width: 155px;">Time</th>

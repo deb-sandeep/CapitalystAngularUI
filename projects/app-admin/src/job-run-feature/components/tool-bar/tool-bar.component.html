@@ -19,9 +19,20 @@
     <span class="bi-arrow-right"></span>
   </button>
 
-  <div class="spacer"></div>
+  <div class="spacer-10"></div>
+  <div class="spacer-10"></div>
 
-  <span class="badge bg-secondary float-end">
-    Total entries : {{model.getTotalRecords()}}
-  </span>
+  <button type="button" class="btn btn-warning btn-sm"
+          *ngIf="model.getPctEntriesSelected() > 0">
+    <span class="bi-trash"></span>
+    Delete Selected
+  </button>
+
+  <div class="spacer-2"></div>
+
+  <button type="button" class="btn btn-danger btn-sm float-end">
+    <span class="bi-trash"></span>
+    Delete All ({{model.getTotalRecords()}}) Search Results
+  </button>
+
 </div>
