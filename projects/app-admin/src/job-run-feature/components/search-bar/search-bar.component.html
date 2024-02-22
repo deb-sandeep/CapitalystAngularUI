@@ -2,8 +2,14 @@
   <table class="table table-bordered search-table">
     <thead>
       <tr>
-        <th scope="col" style="width: 30px;"></th>
-        <th scope="col" style="width: 150px;">
+        <th scope="col" style="width: 30px;">
+          <a (click)="clearSearchCriteria()">
+            <span class="bi-x-diamond"></span>
+          </a>
+        </th>
+        <th scope="col" style="width: 155px;">
+          <input class="datepicker" id="fromDate"> -
+          <input class="datepicker" id="toDate">
         </th>
         <th scope="col" style="width: 200px;">
           <select *ngIf="!multiSelect"
@@ -34,7 +40,7 @@
           </select>
         </th>
         <th scope="col" colspan="3">
-          <a (click)="model.fetchSearchResultsFromServer()">
+          <a (click)="search()">
             <span class="bi-search"></span>
           </a>
         </th>

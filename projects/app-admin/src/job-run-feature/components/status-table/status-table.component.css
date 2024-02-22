@@ -7,4 +7,9 @@
 
 .status-table {
   margin-bottom: 0;
+  height: fit-content;
+}
+
+.status-table > tr {
+  height: 18px;
 }

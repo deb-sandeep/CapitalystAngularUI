@@ -12,3 +12,9 @@ select {
   padding: 1px;
   font-size: 12px;
 }
+
+.datepicker {
+  width: 65px;
+  display: inline-block;
+  border-width: 0;
+}
