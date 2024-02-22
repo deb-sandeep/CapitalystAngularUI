@@ -2,6 +2,11 @@
   margin-bottom: 0;
 }
 
+select {
+  width:90%;
+  display: inline-block;
+}
+
 /* Bootstrap override */
 .form-select-sm {
   padding: 1px;

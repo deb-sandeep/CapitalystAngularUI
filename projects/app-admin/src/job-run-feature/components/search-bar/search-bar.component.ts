@@ -21,5 +21,7 @@ import {JobRunStatusModel} from "../../model/job-run-status.model";
 })
 export class SearchBarComponent {
 
+  multiSelect:boolean = false ;
+
   constructor( public model : JobRunStatusModel ) {}
 }
