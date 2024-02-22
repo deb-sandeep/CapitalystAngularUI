@@ -16,6 +16,7 @@ import {AppComponent} from "../app.component";
     ComponentsModule,
     NgForOf, DatePipe, NgIf],
   template: `
+    <search-bar></search-bar>
     <status-table></status-table>
     <tool-bar></tool-bar>
   `

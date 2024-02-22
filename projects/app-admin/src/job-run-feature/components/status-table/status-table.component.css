@@ -1,6 +1,6 @@
 .status-table-div {
   width: 100%;
-  height: calc( 100vh - 86px );
+  height: calc( 100vh - 112px );
   display: flex;
   overflow-y: scroll;
 }

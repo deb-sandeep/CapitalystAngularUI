@@ -8,15 +8,24 @@ export class JobRunStatusModel {
 
   private pagedEntries: SpringPageVo<JobRunStatus> | null = null ;
   private searchCriteria: SearchCriteria = new SearchCriteria() ;
+  private jobNames: string[] = [] ;
 
   constructor( private dataSource:JobRunStatusDao ) {
     this.fetchSearchResultsFromServer() ;
+    this.fetchDistinctJobNamesFromServer() ;
   }
 
   fetchSearchResultsFromServer() : void {
     this.dataSource.getSearchResults( this.searchCriteria )
       .subscribe( pagedEntries => {
         this.pagedEntries = pagedEntries ;
+      } ) ;
+  }
+
+  fetchDistinctJobNamesFromServer() : void {
+    this.dataSource.getDistinctJobNames()
+      .subscribe( distinctJobNames => {
+        this.jobNames = distinctJobNames ;
       } ) ;
   }
 
