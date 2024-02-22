@@ -1,3 +1,9 @@
 .search-table {
   margin-bottom: 0;
 }
+
+/* Bootstrap override */
+.form-select-sm {
+  padding: 1px;
+  font-size: 12px;
+}

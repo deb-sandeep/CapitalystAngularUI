@@ -3,10 +3,30 @@
     <thead>
       <tr>
         <th scope="col" style="width: 30px;"></th>
-        <th scope="col" style="width: 150px;"></th>
-        <th scope="col" style="width: 200px;"></th>
-        <th scope="col" style="width: 50px;"></th>
-        <th scope="col" colspan="3">[Search]</th>
+        <th scope="col" style="width: 150px;">
+        </th>
+        <th scope="col" style="width: 200px;">
+          <select [(ngModel)]="model.getSearchCriteria().jobName"
+                  class="form-select form-select-sm"
+                  style="width: 100%;">
+            <option value="">All Jobs</option>
+            <option *ngFor="let jobName of model.getDistinctJobNames()"
+                    value="{{jobName}}">{{jobName}}</option>
+          </select>
+        </th>
+        <th scope="col" style="width: 50px;">
+          <select [(ngModel)]="model.getSearchCriteria().result"
+                  class="form-select form-select-sm" style="width: 100%;">
+            <option value="">*</option>
+            <option value="SUCCESS">S</option>
+            <option value="FAILURE">F</option>
+          </select>
+        </th>
+        <th scope="col" colspan="3">
+          <a (click)="model.fetchSearchResultsFromServer()">
+            <span class="bi-search"></span>
+          </a>
+        </th>
       </tr>
     </thead>
     <tbody>

@@ -41,6 +41,10 @@ export class JobRunStatusModel {
     return this.searchCriteria ;
   }
 
+  getDistinctJobNames() : string[] {
+    return this.jobNames ;
+  }
+
   isFirstPage() : boolean {
     return this.pagedEntries != null ? this.pagedEntries.first : true ;
   }

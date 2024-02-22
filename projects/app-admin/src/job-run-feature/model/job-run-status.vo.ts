@@ -1,6 +1,6 @@
 export class SearchCriteria {
   constructor(
-    public jobName:string|null=null,
+    public jobName:string[]|null=[],
     public result:string|null=null,
     public fromDate:Date|null=null,
     public toDate:Date|null=null,

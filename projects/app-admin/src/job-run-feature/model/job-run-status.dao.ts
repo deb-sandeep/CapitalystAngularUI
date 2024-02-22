@@ -19,10 +19,11 @@ export class JobRunStatusDao {
       const propKey: SearchCriteriaKey = property as keyof SearchCriteria ;
       let propValue = searchCriteria[propKey] ;
 
-      if( propValue != null ) {
+      if( propValue != null && propValue != "" ) {
         if( propValue instanceof Date ) {
           propValue = (propValue as Date).toISOString().split('T')[0] ;
         }
+
         params = params.append( property, propValue.toString() ) ;
       }
     }
