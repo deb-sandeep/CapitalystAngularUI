@@ -1,0 +1,14 @@
+.tool-bar {
+  width: 100%;
+  background-color: #B9B9B9;
+  padding: 5px;
+}
+
+.tool-bar > * {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.spacer {
+  width: 10px;
+}

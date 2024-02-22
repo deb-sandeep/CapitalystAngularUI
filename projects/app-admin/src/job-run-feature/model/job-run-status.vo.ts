@@ -4,8 +4,8 @@ export class SearchCriteria {
     public result:string|null=null,
     public fromDate:Date|null=null,
     public toDate:Date|null=null,
-    public pageNum:number=1,
-    public pageSize:number=50
+    public pageNum:number=0,
+    public pageSize:number=38
   ) {}
 }
 

@@ -14,7 +14,14 @@ import { JobRunFeatureComponent } from "./job-run-feature/job-run-feature.compon
     AppNavBarComponent,
     JobRunFeatureComponent,
   ],
-  templateUrl: './app.component.html'
+  template: `
+    <app-nav-bar [title]="navBarTitle"></app-nav-bar>
+    <div class="base-split-pane">
+      <app-icon-bar [meta]="iconMetaList"></app-icon-bar>
+      <div class="base-module-panel">
+        <router-outlet></router-outlet>
+      </div>
+    </div>`
 })
 export class AppComponent {
 

@@ -1,0 +1,27 @@
+<div class="tool-bar" *ngIf="model.getPageInfo() != null">
+  <button type="button" class="btn btn-primary btn-sm"
+          [disabled]="!prevPageExists()"
+          (click)="fetchNextPage( true )">
+    <span class="bi-arrow-left"></span>
+    <span *ngIf="prevPageExists()">
+      Page {{prevPageNumber()}}/{{model.getTotalPages()}}
+    </span>
+  </button>
+
+  <div class="spacer"></div>
+
+  <button type="button" class="btn btn-primary btn-sm"
+          [disabled]="!nextPageExists()"
+          (click)="fetchNextPage(false)">
+    <span *ngIf="nextPageExists()">
+      Page {{nextPageNumber()}}/{{model.getTotalPages()}}
+    </span>
+    <span class="bi-arrow-right"></span>
+  </button>
+
+  <div class="spacer"></div>
+
+  <span class="badge bg-secondary float-end">
+    Total entries : {{model.getTotalRecords()}}
+  </span>
+</div>

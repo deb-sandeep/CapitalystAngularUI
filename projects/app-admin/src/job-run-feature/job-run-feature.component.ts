@@ -15,7 +15,10 @@ import {AppComponent} from "../app.component";
     PipesModule,
     ComponentsModule,
     NgForOf, DatePipe, NgIf],
-  template: '<status-table></status-table>'
+  template: `
+    <status-table></status-table>
+    <tool-bar></tool-bar>
+  `
 })
 export class JobRunFeatureComponent {
 
