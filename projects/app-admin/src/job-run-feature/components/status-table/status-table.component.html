@@ -36,7 +36,11 @@
       </td>
       <td class="text-end">{{entry.duration}}</td>
       <td>
-        <code style="margin-bottom:0;">{{entry.remarks | firstLine | slice:0:100}}</code>
+        <span *ngIf="entry.remarks" class="bi-card-text"
+              (click)="stackTrace=entry.remarks">
+          &nbsp;&nbsp;
+        </span>
+        <code style="margin-bottom:0;">{{entry.remarks | firstLine | slice:0:90}}</code>
       </td>
       <td class="text-end">
         <span class="bi-trash font-red"
@@ -45,4 +49,15 @@
     </tr>
     </tbody>
   </table>
+</div>
+
+<div class="modal-screen" [hidden]="stackTrace == null">
+  <div class="modal-content">
+    <span class="close" (click)="stackTrace=null">&times;</span>
+    <div>
+      <pre>
+      {{stackTrace}}
+      </pre>
+    </div>
+  </div>
 </div>

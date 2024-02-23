@@ -24,13 +24,6 @@
               "zone.js"
             ],
             "tsConfig": "projects/app-admin/tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/lib-assets/assets",
-                "output": "assets"
-              }
-            ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
@@ -65,13 +58,13 @@
               "sourceMap": true,
               "fileReplacements": [
                 {
-                  "replace": "projects/app-admin/src/environments/environment.ts",
-                  "with": "projects/app-admin/src/environments/environment.development.ts"
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.development.ts"
                 }
               ]
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -83,7 +76,7 @@
               "buildTarget": "app-admin:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "production"
         }
       }
     },

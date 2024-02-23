@@ -13,3 +13,45 @@
 .status-table > tr {
   height: 18px;
 }
+
+.modal-screen {
+  position: fixed;               /* Stay in place */
+  z-index: 1;                    /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #3f3f3f;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #a8a8a8;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 50% ;
+  overflow-y: scroll;
+}
+
+.modal-content pre {
+  color: #2be507;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top:10px;
+  right:20px;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

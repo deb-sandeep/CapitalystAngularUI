@@ -5,6 +5,7 @@ import {JobRunStatusModel} from "../../model/job-run-status.model";
 import {ModelModule} from "../../model/model.module";
 import {JobRunStatus} from "../../model/job-run-status.vo";
 import {FormsModule} from "@angular/forms";
+import {ConfirmationDialogService} from "lib-ui";
 
 @Component({
   selector: 'status-table',
@@ -23,7 +24,10 @@ import {FormsModule} from "@angular/forms";
 })
 export class StatusTableComponent {
 
-  constructor( public model : JobRunStatusModel ) {}
+  stackTrace:string | null = null ;
+
+  constructor( public model: JobRunStatusModel,
+               private dlgSvc: ConfirmationDialogService ) {}
 
   deleteEntry( entry: JobRunStatus ) : void {
     this.model.deleteEntries( [entry.id] ) ;
