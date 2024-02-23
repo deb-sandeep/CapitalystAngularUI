@@ -26,7 +26,7 @@ export class StatusTableComponent {
   constructor( public model : JobRunStatusModel ) {}
 
   deleteEntry( entry: JobRunStatus ) : void {
-    console.log( "Entry to be deleted.", entry ) ;
+    this.model.deleteEntries( [entry.id] ) ;
   }
 
   bulkSelectionChanged( newState:boolean ) : void {

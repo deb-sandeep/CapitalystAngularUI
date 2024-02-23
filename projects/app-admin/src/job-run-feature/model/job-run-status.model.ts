@@ -73,4 +73,11 @@ export class JobRunStatusModel {
     }
     return numEntriesSelected/totalEntries ;
   }
+
+  deleteEntries(idList: number[]) {
+    this.dataSource.deleteEntries(idList)
+                   .subscribe(()=> {
+                       this.fetchSearchResultsFromServer() ;
+                   }) ;
+  }
 }

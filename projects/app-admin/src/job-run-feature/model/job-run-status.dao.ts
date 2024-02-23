@@ -10,7 +10,8 @@ export class JobRunStatusDao {
 
   constructor( private http:HttpClient ) {}
 
-  public getSearchResults( searchCriteria:SearchCriteria ): Observable<SpringPageVo<JobRunStatus>> {
+  public getSearchResults( searchCriteria:SearchCriteria ):
+    Observable<SpringPageVo<JobRunStatus>> {
 
     let params = new HttpParams() ;
     type SearchCriteriaKey = keyof SearchCriteria ;
@@ -28,18 +29,34 @@ export class JobRunStatusDao {
       }
     }
 
-    return this.http.get<SpringPageVo<JobRunStatus>>( `${environment.apiRoot}/Job/SearchRunStatusEntries`, {
-      observe: 'body',
-      responseType: 'json',
-      params: params
-    }) ;
+    return this.http.get<SpringPageVo<JobRunStatus>>(
+      `${environment.apiRoot}/Job/SearchRunStatusEntries`,
+      {
+        observe: 'body',
+        responseType: 'json',
+        params: params
+      }
+    ) ;
   }
 
   public getDistinctJobNames(): Observable<string[]> {
 
-    return this.http.get<string[]>( `${environment.apiRoot}/Job/JobNames`, {
-      observe: 'body',
-      responseType: 'json'
-    }) ;
+    return this.http.get<string[]>(
+      `${environment.apiRoot}/Job/JobNames`,
+      {
+        observe: 'body',
+        responseType: 'json'
+      }
+    ) ;
+  }
+
+  deleteEntries( idList: number[] ): Observable<any> {
+
+    return this.http.delete(
+      `${environment.apiRoot}/Job/RunStatusEntries`,
+      {
+        body:idList
+      }
+    ) ;
   }
 }
