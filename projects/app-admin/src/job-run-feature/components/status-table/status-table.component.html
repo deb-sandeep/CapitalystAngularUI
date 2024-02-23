@@ -23,7 +23,7 @@
         <input type="checkbox"
                [(ngModel)]="entry.selected"/>
       </td>
-      <td class="font-monospace">{{entry.date | date:'dd-MMM-yy hh:mm'}}</td>
+      <td class="font-monospace">{{entry.date | date:'dd-MMM-yy HH:mm'}}</td>
       <td>{{entry.jobName}}</td>
       <td class="text-center">
         <div *ngIf="entry.result === 'SUCCESS'; then thenBlock else elseBlock"></div>

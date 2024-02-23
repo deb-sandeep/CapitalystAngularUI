@@ -47,8 +47,6 @@ export class ToolBarComponent {
 
   fetchNextPage( prev:boolean ) : void {
 
-    console.log( `Fetching next page. prev=${prev}` ) ;
-
     let searchCrit: SearchCriteria = this.model.getSearchCriteria() ;
     let nextPageNum = prev ? this.prevPageNumber() :
                                       this.nextPageNumber() ;
@@ -64,7 +62,6 @@ export class ToolBarComponent {
   }
 
   deleteAllSearchResults() {
-    console.log( "Delete all search results." ) ;
     let msg:string = `Delete all (${this.model.getTotalRecords()}) searched entries` ;
     this.dlgSvc.confirm( msg )
       .then( () => {

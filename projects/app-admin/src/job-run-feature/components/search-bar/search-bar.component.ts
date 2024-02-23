@@ -48,8 +48,8 @@ export class SearchBarComponent {
   search() : void {
     let sc: SearchCriteria = this.model.getSearchCriteria() ;
 
-    sc.fromDate = $('#fromDate').datepicker( 'getDate' ) ;
-    sc.toDate   = $('#toDate').datepicker( 'getDate' ) ;
+    sc.fromDate = $('#fromDate').datepicker('getDate') ;
+    sc.toDate   = $('#toDate').datepicker('getDate') ;
     sc.pageNum  = 0 ;
 
     this.model.fetchSearchResultsFromServer() ;

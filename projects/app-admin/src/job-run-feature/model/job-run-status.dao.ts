@@ -22,9 +22,10 @@ export class JobRunStatusDao {
 
       if( propValue != null && propValue != "" ) {
         if( propValue instanceof Date ) {
+          let date = propValue as Date ;
+          date.setHours( date.getHours()+5, date.getMinutes()+30 ) ;
           propValue = (propValue as Date).toISOString().split('T')[0] ;
         }
-
         params = params.append( property, propValue.toString() ) ;
       }
     }
