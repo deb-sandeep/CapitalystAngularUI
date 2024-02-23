@@ -31,7 +31,9 @@
 
   <div class="spacer-2"></div>
 
-  <button type="button" class="btn btn-danger btn-sm float-end">
+  <button type="button" class="btn btn-danger btn-sm float-end"
+          *ngIf="model.getTotalRecords()>0"
+          (click)="deleteAllSearchResults()">
     <span class="bi-trash"></span>
     Delete All ({{model.getTotalRecords()}}) Search Results
   </button>

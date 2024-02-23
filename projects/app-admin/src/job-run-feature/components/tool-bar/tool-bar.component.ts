@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import {JobRunStatusModel} from "../../model/job-run-status.model";
+import { JobRunStatusModel } from "../../model/job-run-status.model";
 import { NgIf } from "@angular/common";
 import { Pageable } from "lib-ui";
 import { SearchCriteria } from "../../model/job-run-status.vo";
+
 
 @Component({
   selector: 'tool-bar',
@@ -59,5 +60,9 @@ export class ToolBarComponent {
 
   deleteSelectedEntries() : void {
     this.model.deleteSelectedEntries() ;
+  }
+
+  deleteAllSearchResults() {
+    console.log( "Delete all search results." ) ;
   }
 }
