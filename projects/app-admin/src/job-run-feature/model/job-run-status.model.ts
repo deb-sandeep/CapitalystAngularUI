@@ -80,4 +80,17 @@ export class JobRunStatusModel {
                        this.fetchSearchResultsFromServer() ;
                    }) ;
   }
+
+  deleteSelectedEntries() {
+    let selectedIds:number[] = [] ;
+    for( const entry of this.getEntries() ) {
+      if( entry.selected ) {
+        selectedIds.push( entry.id ) ;
+      }
+    }
+
+    if( selectedIds.length > 0 ) {
+      this.deleteEntries( selectedIds ) ;
+    }
+  }
 }

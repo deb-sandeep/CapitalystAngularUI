@@ -56,4 +56,8 @@ export class ToolBarComponent {
       this.model.fetchSearchResultsFromServer() ;
     }
   }
+
+  deleteSelectedEntries() : void {
+    this.model.deleteSelectedEntries() ;
+  }
 }

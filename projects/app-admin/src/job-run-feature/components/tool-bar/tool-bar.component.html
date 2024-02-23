@@ -23,7 +23,8 @@
   <div class="spacer-10"></div>
 
   <button type="button" class="btn btn-warning btn-sm"
-          *ngIf="model.getPctEntriesSelected() > 0">
+          *ngIf="model.getPctEntriesSelected() > 0"
+          (click)="deleteSelectedEntries()">
     <span class="bi-trash"></span>
     Delete Selected
   </button>
