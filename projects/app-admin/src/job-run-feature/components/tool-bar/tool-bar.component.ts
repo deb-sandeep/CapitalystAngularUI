@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { JobRunStatusModel } from "../../model/job-run-status.model";
 import { NgIf } from "@angular/common";
-import { Pageable } from "lib-ui";
+import { Pageable, ConfirmationDialogService } from "lib-ui";
 import { SearchCriteria } from "../../model/job-run-status.vo";
 
 
@@ -16,7 +16,8 @@ import { SearchCriteria } from "../../model/job-run-status.vo";
 })
 export class ToolBarComponent {
 
-  constructor( public model: JobRunStatusModel ) {}
+  constructor( public model: JobRunStatusModel,
+               private dlgSvc: ConfirmationDialogService ) {}
 
   prevPageNumber() : number {
     let retVal:number = -1 ;
@@ -64,5 +65,11 @@ export class ToolBarComponent {
 
   deleteAllSearchResults() {
     console.log( "Delete all search results." ) ;
+    let msg:string = `Delete all (${this.model.getTotalRecords()}) searched entries` ;
+    this.dlgSvc.confirm( msg )
+      .then( () => {
+        console.log( "User confirmed deletion. " ) ;
+      })
+      .catch( reason => console.log( "User declined confirmation." ) ) ;
   }
 }
