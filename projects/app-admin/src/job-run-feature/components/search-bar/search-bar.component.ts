@@ -42,6 +42,8 @@ export class SearchBarComponent {
   clearSearchCriteria() : void {
     let sc: SearchCriteria = this.model.getSearchCriteria() ;
     sc.reset() ;
+    $('#fromDate').datepicker('clearDates') ;
+    $('#toDate').datepicker('clearDates') ;
     this.search() ;
   }
 

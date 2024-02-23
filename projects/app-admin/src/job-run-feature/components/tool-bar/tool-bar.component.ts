@@ -65,7 +65,7 @@ export class ToolBarComponent {
     let msg:string = `Delete all (${this.model.getTotalRecords()}) searched entries` ;
     this.dlgSvc.confirm( msg )
       .then( () => {
-        console.log( "User confirmed deletion. " ) ;
+        this.model.deleteAllSearchResults() ;
       })
       .catch( reason => console.log( "User declined confirmation." ) ) ;
   }

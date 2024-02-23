@@ -10,8 +10,8 @@ export class JobRunStatusDao {
 
   constructor( private http:HttpClient ) {}
 
-  public getSearchResults( searchCriteria:SearchCriteria ):
-    Observable<SpringPageVo<JobRunStatus>> {
+  private convertSearchCriteriaToHTTPParams( searchCriteria:SearchCriteria )
+    :HttpParams {
 
     let params = new HttpParams() ;
     type SearchCriteriaKey = keyof SearchCriteria ;
@@ -22,14 +22,18 @@ export class JobRunStatusDao {
 
       if( propValue != null && propValue != "" ) {
         if( propValue instanceof Date ) {
-          let date = propValue as Date ;
-          date.setHours( date.getHours()+5, date.getMinutes()+30 ) ;
-          propValue = (propValue as Date).toISOString().split('T')[0] ;
+          propValue = (propValue as Date).toISOString() ;
         }
         params = params.append( property, propValue.toString() ) ;
       }
     }
+    return params ;
+  }
 
+  public getSearchResults( searchCriteria:SearchCriteria ):
+    Observable<SpringPageVo<JobRunStatus>> {
+
+    let params = this.convertSearchCriteriaToHTTPParams( searchCriteria ) ;
     return this.http.get<SpringPageVo<JobRunStatus>>(
       `${environment.apiRoot}/Job/SearchRunStatusEntries`,
       {
@@ -59,5 +63,16 @@ export class JobRunStatusDao {
         body:idList
       }
     ) ;
+  }
+
+  deleteAllSearchResults( searchCriteria: SearchCriteria ) {
+
+    let params = this.convertSearchCriteriaToHTTPParams( searchCriteria ) ;
+    return this.http.delete(
+      `${environment.apiRoot}/Job/DeleteAllSearchResults`,
+      {
+        params:params
+      }
+    )
   }
 }

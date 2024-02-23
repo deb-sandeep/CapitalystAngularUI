@@ -93,4 +93,11 @@ export class JobRunStatusModel {
       this.deleteEntries( selectedIds ) ;
     }
   }
+
+  deleteAllSearchResults() {
+    this.dataSource.deleteAllSearchResults( this.searchCriteria )
+      .subscribe(()=> {
+        this.fetchSearchResultsFromServer() ;
+      }) ;
+  }
 }
