@@ -40,7 +40,8 @@
               (click)="stackTrace=entry.remarks">
           &nbsp;&nbsp;
         </span>
-        <code style="margin-bottom:0;">{{entry.remarks | firstLine | slice:0:90}}</code>
+        <code style="margin-bottom:0;"
+              [class.success-remark]="entry.result === 'SUCCESS'">{{entry.remarks | firstLine | slice:0:90}}</code>
       </td>
       <td class="text-end">
         <span class="bi-trash font-red"

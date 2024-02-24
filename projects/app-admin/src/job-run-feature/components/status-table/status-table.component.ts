@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {DatePipe, NgForOf, NgIf, SlicePipe} from "@angular/common";
+import {DatePipe, NgClass, NgForOf, NgIf, SlicePipe} from "@angular/common";
 import {PipesModule} from "../../pipes/pipes.module";
 import {JobRunStatusModel} from "../../model/job-run-status.model";
 import {ModelModule} from "../../model/model.module";
@@ -17,7 +17,8 @@ import {ConfirmationDialogService} from "lib-ui";
     NgIf,
     DatePipe,
     FormsModule,
-    SlicePipe
+    SlicePipe,
+    NgClass
   ],
   templateUrl: './status-table.component.html',
   styleUrl: './status-table.component.css'

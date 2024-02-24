@@ -24,6 +24,13 @@
               "zone.js"
             ],
             "tsConfig": "projects/app-admin/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/lib-assets/assets",
+                "output": "assets"
+              }
+            ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
@@ -76,7 +83,7 @@
               "buildTarget": "app-admin:build:development"
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         }
       }
     },
